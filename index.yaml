@@ -1,0 +1,611 @@
+apiVersion: v1
+entries:
+  consul:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 1.9.4
+    created: "2021-03-22T16:54:01.573975558+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Highly available and distributed service discovery and key-value store designed with support for the modern data center to make distributed systems and configuration easy.
+    digest: 794933718c106552bfe1fca98755321c19c77974498331c3e604c8414705a3f5
+    home: https://github.com/bitnami/charts/tree/master/bitnami/consul
+    icon: https://bitnami.com/assets/stacks/consul/img/consul-stack-220x234.png
+    keywords:
+    - discovering
+    - configuring
+    - services
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: consul
+    sources:
+    - https://github.com/bitnami/bitnami-docker-consul
+    - https://www.consul.io/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/consul-9.2.7.tgz
+    version: 9.2.7
+  falco:
+  - apiVersion: v2
+    appVersion: 0.27.0
+    created: "2021-03-22T16:54:01.581041391+01:00"
+    dependencies:
+    - condition: falcosidekick.enabled
+      name: falcosidekick
+      repository: https://falcosecurity.github.io/charts
+      version: 0.2.7
+    description: Falco
+    digest: bc66fc6c634dfd75f320a068ea1a7139974971c09b13d1fc63fc1b36ef06ebff
+    home: https://falco.org
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/falco/horizontal/color/falco-horizontal-color.svg
+    keywords:
+    - monitoring
+    - security
+    - alerting
+    - metric
+    - troubleshooting
+    - run-time
+    maintainers:
+    - email: cncf-falco-dev@lists.cncf.io
+      name: The Falco Authors
+    name: falco
+    sources:
+    - https://github.com/falcosecurity/falco
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/falco-1.7.8.tgz
+    version: 1.7.8
+  harbor:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.2.0
+    created: "2021-03-22T16:54:01.604551256+01:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Harbor is an an open source trusted cloud native registry project that stores, signs, and scans content
+    digest: 72848648c9cffd3dcfc7507507c2e7e3b3282a2cc309e34a91fc702771dc36ac
+    home: https://github.com/bitnami/charts/tree/master/bitnami/harbor
+    icon: https://bitnami.com/assets/stacks/harbor-core/img/harbor-core-stack-220x234.png
+    keywords:
+    - docker
+    - registry
+    - vulnerability
+    - scan
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: harbor
+    sources:
+    - https://github.com/bitnami/bitnami-docker-harbor-core
+    - https://github.com/bitnami/bitnami-docker-harbor-portal
+    - https://github.com/bitnami/bitnami-docker-harbor-jobservice
+    - https://github.com/bitnami/bitnami-docker-harbor-registry
+    - https://github.com/bitnami/bitnami-docker-harbor-registryctl
+    - https://goharbor.io/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/harbor-9.7.0.tgz
+    version: 9.7.0
+  jenkins:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.263.4
+    created: "2021-03-22T16:54:01.612097267+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: The leading open source automation server
+    digest: 3d37dcd91b5ee34cd3f9a79477ba78e4626f94536471f2b44a9e9c6afe5a2273
+    home: https://github.com/bitnami/charts/tree/master/bitnami/jenkins
+    icon: https://bitnami.com/assets/stacks/jenkins/img/jenkins-stack-220x234.png
+    keywords:
+    - jenkins
+    - ci
+    - cd
+    - http
+    - web
+    - application
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: jenkins
+    sources:
+    - https://github.com/bitnami/bitnami-docker-jenkins
+    - https://jenkins.io/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/jenkins-7.3.7.tgz
+    version: 7.3.7
+  kafka:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.7.0
+    created: "2021-03-22T16:54:01.623431723+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.x.x
+    description: Apache Kafka is a distributed streaming platform.
+    digest: 20b3c19df9548b570211b41e9070afad70e8e499ddbc755373cfd7492ba0e910
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kafka
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kafka
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kafka
+    - https://kafka.apache.org/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/kafka-12.11.1.tgz
+    version: 12.11.1
+  keycloak:
+  - annotations:
+      category: DeveloperTools
+    apiVersion: v2
+    appVersion: 12.0.4
+    created: "2021-03-22T16:54:01.637259142+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    description: Keycloak is a high performance Java-based identity and access management solution. It lets developers add an authentication layer to their applications with minimum effort.
+    digest: e07e7b674f64885fa7cfa841df698cc4d77d2abb236900153d0bef0cfbedb93f
+    home: https://www.keycloak.org
+    icon: https://bitnami.com/assets/stacks/keycloak/img/keycloak-stack-220x234.png
+    keywords:
+    - keycloak
+    - access-management
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: keycloak
+    sources:
+    - https://github.com/bitnami/bitnami-docker-keycloak
+    - https://github.com/keycloak/keycloak
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/keycloak-2.3.0.tgz
+    version: 2.3.0
+  kong:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2.3.3
+    created: "2021-03-22T16:54:01.653340417+01:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: cassandra.enabled
+      name: cassandra
+      repository: https://charts.bitnami.com/bitnami
+      version: 7.x.x
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Kong is a scalable, open source API layer (aka API gateway or API middleware) that runs in front of any RESTful API. Extra functionalities beyond the core platform are extended through plugins. Kong is built on top of reliable technologies like NGINX and provides an easy-to-use RESTful API to operate and configure the system.
+    digest: cddd1bfd07fd346d27245df3a9ad1c8bb400a2883a3e2bad107d827f5e10f508
+    home: https://github.com/bitnami/charts/tree/master/bitnami/kong
+    icon: https://bitnami.com/assets/stacks/kong/img/kong-stack-220x234.png
+    keywords:
+    - kong
+    - ingress
+    - openresty
+    - controller
+    - http
+    - web
+    - www
+    - reverse proxy
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: kong
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kong
+    - https://konghq.com/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/kong-3.4.4.tgz
+    version: 3.4.4
+  minio:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 2021.3.4
+    created: "2021-03-22T16:54:01.656716147+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: MinIO(R) is an object storage server, compatible with Amazon S3 cloud storage service, mainly used for storing unstructured data (such as photos, videos, log files, etc.)
+    digest: 81f2c0dd4f29990307b10e2c2336bb759939477117c44d9827721f5fb827613a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/minio
+    icon: https://bitnami.com/assets/stacks/minio/img/minio-stack-220x234.png
+    keywords:
+    - minio
+    - storage
+    - object-storage
+    - s3
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: minio
+    sources:
+    - https://github.com/bitnami/bitnami-docker-minio
+    - https://min.io
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/minio-6.4.0.tgz
+    version: 6.4.0
+  mongodb:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 4.4.4
+    created: "2021-03-22T16:54:01.664454596+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: NoSQL document-oriented database that stores JSON-like documents with dynamic schemas, simplifying the integration of data in content-driven applications.
+    digest: 0e2adf4e32ea87f7d6c2d7b8f12d7440f2d653f22f1a9c13358c3180f0379bc5
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mongodb
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    - cluster
+    - replicaset
+    - replication
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    - https://mongodb.org
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/mongodb-10.10.2.tgz
+    version: 10.10.2
+  mysql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.23
+    created: "2021-03-22T16:54:01.667877263+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Chart to create a Highly available MySQL cluster
+    digest: c8f6cc624ec6ccb8c6649bb429e766ddbd466639f5b158512ffcffbf26752a94
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mysql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mysql
+    - https://mysql.com
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/mysql-8.4.4.tgz
+    version: 8.4.4
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 11.11.0
+    created: "2021-03-22T16:54:01.67166584+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Chart for PostgreSQL, an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: 88d6589a87c5ccada71e4aff2d8278c5413e54a67f3820a574bc81b6700d3ed0
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/postgresql-10.3.13.tgz
+    version: 10.3.13
+  postgresql-ha:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 11.11.0
+    created: "2021-03-22T16:54:01.678882245+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      version: 1.x.x
+    description: Chart for PostgreSQL with HA architecture (using Replication Manager (repmgr) and Pgpool).
+    digest: fbf99f46040a59d80cbec816b3ff1d2a99798665426843fc00e7b03c6bd8479a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - repmgr
+    - pgpool
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    - high availability
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: postgresql-ha
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    - https://www.postgresql.org/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/postgresql-ha-6.7.0.tgz
+    version: 6.7.0
+  rabbitmq:
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
+    appVersion: 3.8.14
+    created: "2021-03-22T16:54:01.682339775+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source message broker software that implements the Advanced Message Queuing Protocol (AMQP)
+    digest: d84e6a9de2f2245aa51b236c2742987755d139462de1ba32b44e61b9b20accb5
+    home: https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq
+    icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+    keywords:
+    - rabbitmq
+    - message queue
+    - AMQP
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: rabbitmq
+    sources:
+    - https://github.com/bitnami/bitnami-docker-rabbitmq
+    - https://www.rabbitmq.com
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/rabbitmq-8.11.3.tgz
+    version: 8.11.3
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 6.0.12
+    created: "2021-03-22T16:54:01.687200579+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.
+    digest: b30eac467331a08690de42e21f63621c25b72da1b4b6386d2b53ce59ae655024
+    home: https://github.com/bitnami/charts/tree/master/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: redis
+    sources:
+    - https://github.com/bitnami/bitnami-docker-redis
+    - http://redis.io/
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/redis-12.8.3.tgz
+    version: 12.8.3
+  sonarqube:
+  - apiVersion: v1
+    appVersion: 8.5.1-community
+    created: "2021-03-22T16:54:01.698340144+01:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.6.4
+    description: SonarQube is an open sourced code quality scanning tool
+    digest: df48341007a8aa19c6e37935e4ed52d36fda02e1918e7349da145176bb9374f4
+    home: https://www.sonarqube.org/
+    icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
+    keywords:
+    - coverage
+    - security
+    - code
+    - quality
+    maintainers:
+    - email: rjkernick@gmail.com
+      name: rjkernick
+    - email: tsiddique@live.com
+      name: tsiddique
+    name: sonarqube
+    sources:
+    - https://github.com/SonarSource/docker-sonarqube
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/sonarqube-9.5.1.tgz
+    version: 9.5.1
+  - apiVersion: v1
+    appVersion: 8.2-community
+    created: "2021-03-22T16:54:01.691841644+01:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.6.4
+    description: SonarQube is an open sourced code quality scanning tool
+    digest: 7bf526af2c575c655a41067e463d980bb296cccceffecf7ca7831535b4e05419
+    home: https://www.sonarqube.org/
+    icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
+    keywords:
+    - coverage
+    - security
+    - code
+    - quality
+    maintainers:
+    - email: rjkernick@gmail.com
+      name: rjkernick
+    - email: tsiddique@live.com
+      name: tsiddique
+    name: sonarqube
+    sources:
+    - https://github.com/SonarSource/docker-sonarqube
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/sonarqube-6.6.0.tgz
+    version: 6.6.0
+  tomcat:
+  - annotations:
+      category: ApplicationServer
+    apiVersion: v2
+    appVersion: 9.0.44
+    created: "2021-03-22T16:54:01.701470347+01:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: Chart for Apache Tomcat
+    digest: 8eb8029714780885229e6b6af0634b3320132ddcfd34edd1997a4e5ba1f1039a
+    home: https://github.com/bitnami/charts/tree/master/bitnami/tomcat
+    icon: https://bitnami.com/assets/stacks/tomcat/img/tomcat-stack-220x234.png
+    keywords:
+    - tomcat
+    - java
+    - http
+    - web
+    - application server
+    - jsp
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: tomcat
+    sources:
+    - https://github.com/bitnami/bitnami-docker-tomcat
+    - http://tomcat.apache.org
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/tomcat-8.2.5.tgz
+    version: 8.2.5
+  vault:
+  - apiVersion: v2
+    appVersion: 1.6.2
+    created: "2021-03-22T16:54:01.705205334+01:00"
+    description: Official HashiCorp Vault Chart
+    digest: 8278d183589001cad4fec6853b66f6109a0f634f236155237921b70e7eafed42
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/vault-0.9.1.tgz
+    version: 0.9.1
+  velero:
+  - apiVersion: v2
+    appVersion: 1.5.3
+    created: "2021-03-22T16:54:01.707643381+01:00"
+    description: A Helm chart for velero
+    digest: 41ecb378f40a92333c56ad55867c88b77a019b62cf00f044b65860e4f0490e94
+    home: https://github.com/vmware-tanzu/velero
+    icon: https://cdn-images-1.medium.com/max/1600/1*-9mb3AKnKdcL_QD3CMnthQ.png
+    maintainers:
+    - email: ashisham@vmware.com
+      name: ashish-amarnath
+    - email: carlisiac@vmware.com
+      name: carlisia
+    - email: ctadeu@gmail.com
+      name: cpanato
+    - email: jenting.hsiao@suse.com
+      name: jenting
+    - email: brubakern@vmware.com
+      name: nrb
+    name: velero
+    sources:
+    - https://github.com/vmware-tanzu/velero
+    urls:
+    - https://github.com/ProvEdge/Helm-Repository-Tutorial.git/velero-2.15.0.tgz
+    version: 2.15.0
+generated: "2021-03-22T16:54:01.570325143+01:00"
